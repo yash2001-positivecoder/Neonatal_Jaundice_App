@@ -25,7 +25,7 @@ camera_button.addEventListener('click', async function() {
     if(camera_button.innerHTML == 'Camera') {
         let stream = null;
         try {
-            stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+            stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' }, audio: false });
         }
         catch(error) {
             alert(error.message);
